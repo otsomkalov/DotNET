@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab1", "Lab1\Lab1.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DES", "DES\DES.csproj", "{F05774A0-221F-4F7F-971E-5F2EE15E3B37}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pz1", "Pz1\Pz1.csproj", "{87665093-EAB1-4E46-A2D7-1D39341C874D}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EA5C71FD-E967-4204-92F1-D6DF31DB5A86}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
