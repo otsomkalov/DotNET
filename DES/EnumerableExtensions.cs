@@ -48,7 +48,7 @@ namespace DES
             return list;
         }
 
-        public static T[] Reshuffle<T>(this IEnumerable<T> block, IEnumerable<int> table)
+        public static T[] Reshuffle<T>(this IEnumerable<T> block, IEnumerable<byte> table)
         {
             var pushedBlock = new[] {default(T)}.Concat(block);
             return table.Select(index => pushedBlock.ElementAt(index)).ToArray();

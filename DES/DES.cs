@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using DES.Properties;
 
 namespace DES
 {
@@ -10,7 +9,7 @@ namespace DES
     {
         public static string Encrypt(string text, string key)
         {
-            if (key.Length != 8) throw new Exception(Resources.KeyLength);
+            if (key.Length != 8) throw new Exception("Key must be 8 units length");
 
             var keyInBits = TextBlockToBits(key)
                 .Reshuffle(Tables.Key);
@@ -34,7 +33,7 @@ namespace DES
 
         public static string Decrypt(string text, string key)
         {
-            if (key.Length != 8) throw new Exception(Resources.KeyLength);
+            if (key.Length != 8) throw new Exception("Key must be 8 units length");
 
             var keyInBits = TextBlockToBits(key)
                 .Reshuffle(Tables.Key);
@@ -150,7 +149,7 @@ namespace DES
             return block1.Zip(block2, (block1Bit, block2Bit) => block1Bit ^ block2Bit).ToArray();
         }
 
-        private static IEnumerable<bool> STransform(bool[] block, IEnumerable<int> sTable)
+        private static IEnumerable<bool> STransform(bool[] block, IEnumerable<byte> sTable)
         {
             var row = Convert.ToInt16(string.Concat(FromBool(block[0]), FromBool(block[5])), 2);
             var col = Convert.ToInt16(string.Concat(block.Skip(1).Take(4).Select(FromBool)), 2);
