@@ -1,0 +1,29 @@
+﻿@model Lab5.ViewModels.IndexViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<ul class="list-group">
+    @foreach (var item in Model.Messages)
+    {
+        <li class="list-group-item">
+            <b>@Html.DisplayFor(modelItem => item.Author):</b>@Html.DisplayFor(modelItem => item.Text)</li>
+    }
+</ul>
+<form asp-action="Create" class="form-inline" style="margin: 10px">
+    <div class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Message.Author" class="control-label"></label>
+        <input asp-for="Message.Author" class="form-control"/>
+        <span asp-validation-for="Message.Author" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Message.Text" class="control-label"></label>
+        <input asp-for="Message.Text" class="form-control"/>
+        <span asp-validation-for="Message.Text" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Send" class="btn btn-default"/>
+    </div>
+</form>
