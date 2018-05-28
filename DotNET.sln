@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pz3", "Pz3\Pz3.csproj", "{C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lb3", "Lb3\Lb3.csproj", "{8404500A-9AAE-4C48-BDA0-86D5D287348D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab4", "Lab4\Lab4.csproj", "{F47107F5-DD0C-487B-B343-9A2CE137FE75}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EA5C71FD-E967-4204-92F1-D6DF31DB5A86}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
