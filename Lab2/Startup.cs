@@ -1,5 +1,5 @@
-﻿using Core.Services;
-using Core.Services.Interfaces;
+﻿using Lab2.Services;
+using Lab2.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

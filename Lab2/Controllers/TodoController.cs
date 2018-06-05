@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using Core.Models;
-using Core.Services.Interfaces;
+using Lab2.Models;
+using Lab2.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 
@@ -8,7 +8,6 @@ namespace Lab2.Controllers
 {
     public class ToDoController : Controller
     {
-        public IConfiguration Configuration { get; }
         private readonly IToDoService _toDoService;
 
         public ToDoController(IConfiguration configuration, IToDoService toDoService)
@@ -16,6 +15,8 @@ namespace Lab2.Controllers
             Configuration = configuration;
             _toDoService = toDoService;
         }
+
+        public IConfiguration Configuration { get; }
 
         // GET: Todo
         public async Task<IActionResult> Index()
@@ -70,7 +71,7 @@ namespace Lab2.Controllers
 
             if (!ModelState.IsValid) return View(toDo);
 
-            await _toDoService.Update(id, toDo);
+            await _toDoService.Update(toDo);
 
             return RedirectToAction(nameof(Index));
         }

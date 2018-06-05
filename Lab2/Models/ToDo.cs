@@ -1,4 +1,4 @@
-﻿namespace Core.Models
+﻿namespace Lab2.Models
 {
     public class ToDo
     {

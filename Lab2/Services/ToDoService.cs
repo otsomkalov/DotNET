@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
-using Core.Models;
-using Core.Services.Interfaces;
+using Lab2.Models;
+using Lab2.Services.Interfaces;
 using Microsoft.Extensions.Configuration;
 
-namespace Core.Services
+namespace Lab2.Services
 {
     public class ToDoService : IToDoService
     {
@@ -69,7 +69,7 @@ namespace Core.Services
             return await command.ExecuteNonQueryAsync();
         }
 
-        public async Task<int> Update(int id, ToDo item)
+        public async Task<int> Update(ToDo item)
         {
             var command =
                 new SqlCommand(
