@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Core.Interfaces;
@@ -28,48 +27,12 @@ namespace Infrastructure.Repositories
                 .ToArrayAsync();
         }
 
-        public Task<T[]> Get(int count, int offset, params string[] includes)
-        {
-            return _set
-                .AsNoTracking()
-                .Include(includes)
-                .Skip(offset)
-                .Take(count)
-                .ToArrayAsync();
-        }
-
-        public Task<T[]> Get(Expression<Func<T, bool>> expression, int count, int offset,
-            params string[] includes)
-        {
-            return _set
-                .AsNoTracking()
-                .Include(includes)
-                .Where(expression)
-                .Skip(offset)
-                .Take(count)
-                .ToArrayAsync();
-        }
-
         public Task<T> Get(Expression<Func<T, bool>> expression, params string[] includes)
         {
             return _set
                 .AsNoTracking()
                 .Include(includes)
                 .SingleOrDefaultAsync(expression);
-        }
-
-        public Task<bool> Any(Expression<Func<T, bool>> expression)
-        {
-            return _set
-                .AsNoTracking()
-                .AnyAsync(expression);
-        }
-
-        public Task<int> GetCount()
-        {
-            return _set
-                .AsNoTracking()
-                .CountAsync();
         }
 
         public async Task Create(T entity)

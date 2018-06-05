@@ -96,6 +96,7 @@ namespace Lb3.Controllers
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
             var store = await _db.Stores.FindAsync(id);
+            if (store == null) return RedirectToAction("Index");
             _db.StoreProducts.RemoveRange(store.StoreProducts);
             _db.Stores.Remove(store);
             await _db.SaveChangesAsync();

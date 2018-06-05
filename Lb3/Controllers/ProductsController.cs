@@ -91,8 +91,11 @@ namespace Lb3.Controllers
             if (!id.HasValue) return new HttpNotFoundResult();
 
             var product = await _db.Products.FindAsync(id);
+
+            if (product == null) return RedirectToAction("Index");
             _db.Products.Remove(product);
             await _db.SaveChangesAsync();
+
             return RedirectToAction("Index");
         }
 

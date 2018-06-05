@@ -230,7 +230,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="package.json" />
+    <Content Include=".bowerrc">
+      <DependentUpon>bower.json</DependentUpon>
+    </Content>
+    <Content Include="bower.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

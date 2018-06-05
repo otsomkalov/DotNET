@@ -161,12 +161,15 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="package.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bower.json" />
+    <Content Include=".bowerrc">
+      <DependentUpon>bower.json</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\ToDo\Index.cshtml" />
     <Content Include="Views\ToDo\Create.cshtml" />

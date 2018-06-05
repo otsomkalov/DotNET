@@ -91,6 +91,8 @@ namespace Lb3.Controllers
             if (!id.HasValue) return RedirectToAction("Index");
             var company = await _db.Companies.FindAsync(id);
 
+            if (company == null) return RedirectToAction("Index");
+
             foreach (var companyStore in company.Stores) _db.StoreProducts.RemoveRange(companyStore.StoreProducts);
 
             _db.Stores.RemoveRange(company.Stores);
