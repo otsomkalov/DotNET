@@ -1,0 +1,50 @@
+﻿@page
+@model EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>StoreProduct</h4>
+<hr/>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StoreProduct.Amount" class="col-form-label"></label>
+                <input asp-for="StoreProduct.Amount" class="form-control"/>
+                <span asp-validation-for="StoreProduct.Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StoreProduct.Price" class="col-form-label"></label>
+                <input asp-for="StoreProduct.Price" class="form-control"/>
+                <span asp-validation-for="StoreProduct.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StoreProduct.ProductId" class="col-form-label"></label>
+                <select asp-for="StoreProduct.ProductId" class="form-control" asp-items="ViewBag.ProductId"></select>
+                <span asp-validation-for="StoreProduct.ProductId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StoreProduct.StoreId" class="col-form-label"></label>
+                <select asp-for="StoreProduct.StoreId" class="form-control" asp-items="ViewBag.StoreId"></select>
+                <span asp-validation-for="StoreProduct.StoreId" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="StoreProduct.Id"/>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-secondary"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

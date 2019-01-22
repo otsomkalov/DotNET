@@ -8,8 +8,8 @@ namespace Pz1
     {
         public static void Demonstrate()
         {
-            GetEmptyCollection<IEnumerable<int>> ienumerableCollection = GetEmptyIenumerableCollection;
-            GetEmptyCollection<List<int>> listCollection = GetEmptyListCollection;
+            GetEmptyCollection<IEnumerable<int>> ienumerableCollection = GetEmptyIEnumerable;
+            GetEmptyCollection<List<int>> listCollection = GetEmptyList;
 
             ienumerableCollection = listCollection;
 
@@ -18,12 +18,12 @@ namespace Pz1
             Console.WriteLine(collection);
         }
 
-        private static IEnumerable<int> GetEmptyIenumerableCollection()
+        private static IEnumerable<int> GetEmptyIEnumerable()
         {
             return Enumerable.Empty<int>();
         }
 
-        private static List<int> GetEmptyListCollection()
+        private static List<int> GetEmptyList()
         {
             return new List<int>();
         }

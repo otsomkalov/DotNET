@@ -6,10 +6,10 @@ namespace Lab2.Services.Interfaces
 {
     public interface IToDoService
     {
-        Task<List<ToDo>> Get();
-        Task<ToDo> Get(int id);
-        Task<int> Add(ToDo item);
-        Task<int> Update(ToDo item);
-        Task<int> Delete(int id);
+        Task<List<ToDo>> ListAsync();
+        Task<ToDo> GetByIdAsync(int id);
+        Task<int> CreateAsync(ToDo item);
+        Task<int> UpdateAsync(ToDo item);
+        Task<int> RemoveAsync(int id);
     }
 }

@@ -6,8 +6,8 @@ namespace Pz1
     {
         public static void Demonstrate()
         {
-            DESFunction function = DES.DES.Encrypt;
-            Console.WriteLine(function.Invoke("qweasdzxc", "qweasdzx"));
+            DESFunction encryptFunction = DES.DES.Encrypt;
+            Console.WriteLine(encryptFunction.Invoke("qweasdzxc", "qweasdzx"));
         }
 
         private delegate string DESFunction(string text, string key);

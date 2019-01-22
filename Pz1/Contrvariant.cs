@@ -7,22 +7,22 @@ namespace Pz1
     {
         public static void Demonstrate()
         {
-            GetStringRepresentation<IEnumerable<int>> ienumerableStringRepresentation = IenumerableStringRepresentation;
-            GetStringRepresentation<List<int>> listStringRepresentation = ListStringRepresentation;
+            GetStringRepresentation<IEnumerable<int>> collectionStringRepresentation = GetCollectionStringRepresentation;
+            GetStringRepresentation<List<int>> listStringRepresentation = GetListStringRepresentation;
 
-            listStringRepresentation = ienumerableStringRepresentation;
+            listStringRepresentation = collectionStringRepresentation;
 
             var list = new List<int>();
 
             listStringRepresentation(list);
         }
 
-        private static void ListStringRepresentation(List<int> collection)
+        private static void GetListStringRepresentation(List<int> collection)
         {
             Console.WriteLine(collection.ToString());
         }
 
-        private static void IenumerableStringRepresentation(IEnumerable<int> collection)
+        private static void GetCollectionStringRepresentation(IEnumerable<int> collection)
         {
             Console.WriteLine(collection.ToString());
         }

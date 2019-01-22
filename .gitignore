@@ -258,4 +258,9 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
+Lb3/wwwroot/lib/
+
 Web/wwwroot/lib/
+
+DKR/wwwroot/lib/

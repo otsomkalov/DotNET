@@ -8,7 +8,7 @@ namespace Pz1
     {
         public static void Demonstrate()
         {
-            var anyInt = new Func<IEnumerable<int>, bool>(colletion => colletion.Any());
+            var anyInt = new Func<IEnumerable<int>, bool>(collection => collection.Any());
             var anyBool = new Func<IEnumerable<bool>, bool>(collection => collection.Any());
 
             var intCollection = Enumerable.Empty<int>();
